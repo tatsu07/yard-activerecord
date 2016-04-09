@@ -6,7 +6,7 @@ module YARD::Handlers::Ruby::ActiveRecord::Scopes
     namespace_only
     
     def process
-      object = register YARD::CodeObjects::MethodObject.new(namespace, method_name, :class)
+      object = register YARD::CodeObjects::MethodObject.new(namespace, method_name)
       object.docstring = return_description
       object.docstring.add_tag get_tag(:return, '', class_name)
       object.docstring.add_tag get_tag(:see,"ActiveRecord::Scoping", nil,
